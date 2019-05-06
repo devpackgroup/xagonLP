@@ -98,13 +98,47 @@ input, select, textarea {
 		box-sizing: inherit;
 	}
 
+	@keyframes banner {
+		0% {
+			position:relative;
+			background-color: #2e3141;
+			background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/banner1.jpg");
+			background-size: auto, cover;
+			background-attachment: fixed, fixed;
+			background-position: center, center;
+		}
+		40% {
+			position:relative;
+			background-color: #2e3141;
+			background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/banner2.jpg");
+			background-size: auto, cover;
+			background-attachment: fixed, fixed;
+			background-position: center, center;
+		}
+		80% {
+			position:relative;
+			background-color: #2e3141;
+			background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/banner3.jpg");
+			background-size: auto, cover;
+			background-attachment: fixed, fixed;
+			background-position: center, center;
+		}
+	}
+
 	body {
+		position:relative;
 		background-color: #2e3141;
-		background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
+		-webkit-transition: background-image 1.5s linear;
+		-moz-transition: background-image 1.5s linear;
+		-o-transition: background-image 1.5s linear;
+		-ms-transition: background-image 1.5s linear;
+		transition: background-image 1.5s linear;
+		background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/banner1.jpg");
 		background-size: auto, cover;
 		background-attachment: fixed, fixed;
 		background-position: center, center;
 	}
+
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
