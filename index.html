@@ -8,6 +8,8 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="shortcut icon" href="images/logo.ico" />
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+		<link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -74,22 +76,22 @@
 						
 						<!-- Three -->
 
-							<section id="three" class="wrapper spotlight style1">
-									<div class="inner">
-											<img src="images/valores.png" style="width:8em;height:8em;margin: 0 0 0 0.8em;" alt="Kiwi standing on oval">
-										<div class="content">
-											<h2 class="major">Nuestros Valores</h2>
-											<div class="col-6 col-12-medium"></div>
-												<ul class="alt">
-														<li><b>Responsabilidad</b><br /> Brindamos soluciones y asesorías responsables, comprometidas y en total apego a la legislación local del mercado.</li>
-														<li><b>Experiencia Técnica y Política</b><br /> Contamos con la experiencia técnica, política, administrativa para brindar las asesorías integrales a sus necesidades.</li>
-														<li><b>Trabajo en Equipo</b><br />Nuestro equipo multidisciplinario, esta capacitado para responder en todo momento a las necesidades de su organización.</li>
-														<li><b>Visión Integral de la Región</b><br /> Estamos comprometidos con el fomento y la diversificación del sector energético y apoyamos constantemente la elaboración políticas públicas de beneficio e impacto social sin desestimar la rentabilidad y sostenibilidad de los involucrados (sociedad, gobierno, iniciativa privada)</li>
-												</ul>
-											</div>
-										</div>
+						<section id="three" class="wrapper spotlight style1">
+							<div class="inner">
+									<img src="images/valores.png" style="width:8em;height:8em;margin: 0 0 0 0.8em;" alt="Kiwi standing on oval">
+								<div class="content">
+									<h2 class="major">Nuestros Valores</h2>
+									<div class="col-6 col-12-medium"></div>
+										<ul class="alt">
+												<li><b>Responsabilidad</b><br /> Brindamos soluciones y asesorías responsables, comprometidas y en total apego a la legislación local del mercado.</li>
+												<li><b>Experiencia Técnica y Política</b><br /> Contamos con la experiencia técnica, política, administrativa para brindar las asesorías integrales a sus necesidades.</li>
+												<li><b>Trabajo en Equipo</b><br />Nuestro equipo multidisciplinario, esta capacitado para responder en todo momento a las necesidades de su organización.</li>
+												<li><b>Visión Integral de la Región</b><br /> Estamos comprometidos con el fomento y la diversificación del sector energético y apoyamos constantemente la elaboración políticas públicas de beneficio e impacto social sin desestimar la rentabilidad y sostenibilidad de los involucrados (sociedad, gobierno, iniciativa privada)</li>
+										</ul>
 									</div>
-								</section>
+								</div>
+							</div>
+						</section>
 
 						<!-- Four -->
 
@@ -194,6 +196,34 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			
+			<script>
+				var bgImageArray = ["banner1.png", "banner2.png", "banner3.png"],
+				base = "images/",
+				secs = 4;
+				bgImageArray.forEach(function(img){
+					new Image().src = base + img; 
+					// caches images, avoiding white flash between background replacements
+				});
+
+				function backgroundSequence() {
+					window.clearTimeout();
+					var k = 0;
+					for (i = 0; i < bgImageArray.length; i++) {
+						setTimeout(function(){ 
+							document.documentElement.style.background = "url(" + base + bgImageArray[k] + ") no-repeat center center fixed";
+							document.documentElement.style.backgroundSize ="cover";
+						if ((k + 1) === bgImageArray.length) { setTimeout(function() { backgroundSequence() }, (secs * 1000))} else { k++; }			
+						}, (secs * 1000) * i)	
+					}
+				}
+				backgroundSequence();
+				
+			</script>
+			<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+			<script>
+				AOS.init({
+					easing: 'ease-in-quad',
+				});
+			</script>
 	</body>
 </html>
