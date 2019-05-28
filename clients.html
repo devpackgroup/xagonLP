@@ -81,7 +81,7 @@
 														<div class="col-3"><span class="image fit"><img src="images/c25.png" alt="" /></span></div>
 														<div class="col-3"><span class="image fit"><img src="images/c26.png" alt="" /></span></div>
 														<div class="col-3"><span class="image fit"><img src="images/c27.png" alt="" /></span></div>
-														
+														<div class="col-3"><span class="image fit"><img src="images/c28.png" alt="" /></span></div>
 													</div>
 												</div>
 												</section>
@@ -116,7 +116,7 @@
 									5 avenida 5-55 <br />zona 14. <br />EUROPLAZA Torre I, of.1803
 								</li>
 								<li class="fa-phone">(502) 2224-8677</li>
-								<li class="fa-envelope"><a href="#">mquijivix@xagon.info</a></li>
+								<li class="fa-envelope"><a href="#">ask@xagon.info</a></li>
 							</ul>
 							<ul class="copyright">
 								<li>&copy; X'agon S.A. All rights reserved.</li><li>Design: <a href="">jgarcia@devpackgroup.com</a></li>
@@ -133,6 +133,33 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				var bgImageArray = ["banner1.png", "banner2.png", "banner3.png"],
+				base = "images/",
+				secs = 4;
+				bgImageArray.forEach(function(img){
+					new Image().src = base + img; 
+					// caches images, avoiding white flash between background replacements
+				});
 
+				function backgroundSequence() {
+					window.clearTimeout();
+					var k = 0;
+					for (i = 0; i < bgImageArray.length; i++) {
+						setTimeout(function(){ 
+							document.documentElement.style.background = "url(" + base + bgImageArray[k] + ") no-repeat center center fixed";
+							document.documentElement.style.backgroundSize ="cover";
+						if ((k + 1) === bgImageArray.length) { setTimeout(function() { backgroundSequence() }, (secs * 1000))} else { k++; }			
+						}, (secs * 1000) * i)	
+					}
+				}
+				backgroundSequence();
+			</script>
+			<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+			<script>
+				AOS.init({
+					easing: 'ease-in-quad',
+				});
+			</script>
 	</body>
 </html>

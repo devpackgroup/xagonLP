@@ -110,13 +110,13 @@
 /*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
 @media (min-width:1201px) { /* <- 5-4  hexagons per row */
   #hexGrid{
-    padding-bottom: 4.4%
+    padding-bottom: 9%
   }
   .hex {
-    width: 35%; /* = 100 / 5 */
+    width: 28%; /* = 100 / 5 */
   }
-  .hex:nth-child(4n+3){ /* first hexagon of even rows */
-    margin-left:17.5%;  /* = width of .hex / 2  to indent even rows */
+  .hex:nth-child(5n+4){ /* first hexagon of even rows */
+    margin-left:14%;  /* = width of .hex / 2  to indent even rows */
   }
 }
 
