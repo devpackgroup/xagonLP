@@ -118,6 +118,9 @@
   .hex:nth-child(5n+4){ /* first hexagon of even rows */
     margin-left:14%;  /* = width of .hex / 2  to indent even rows */
   }
+  .hexLink{
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 1200px) and (min-width:901px) { /* <- 4-3  hexagons per row */
@@ -129,6 +132,12 @@
   }
   .hex:nth-child(7n+5){ /* first hexagon of even rows */
     margin-left:12.5%;  /* = width of .hex / 2  to indent even rows */
+  }
+  .hexLink{
+    font-size: 7px;
+  }
+  .hexP{
+    color: rgba(0, 128, 128, 0.0);
   }
 }
 
@@ -142,6 +151,12 @@
   .hex:nth-child(5n+4){ /* first hexagon of even rows */
     margin-left:16.666%;  /* = width of .hex / 2  to indent even rows */
   }
+  .hexLink{
+    font-size: 7px;
+  }
+  .hexP{
+    color: rgba(0, 128, 128, 0.0);
+  }
 }
 
 @media (max-width: 600px) { /* <- 2-1  hexagons per row */
@@ -154,10 +169,19 @@
   .hex:nth-child(3n+3){ /* first hexagon of even rows */
     margin-left:25%;  /* = width of .hex / 2  to indent even rows */
   }
+  .hexLink{
+    font-size: 7px;
+  }
+  .hexP{
+    color: rgba(0, 128, 128, 0.0);
+  }
 }
 
 @media (max-width: 400px) {
     #hexGrid {
         font-size: 13px;
+    }
+    .hexP{
+      color: rgba(0, 128, 128, 0.0);
     }
 }
